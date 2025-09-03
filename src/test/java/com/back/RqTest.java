@@ -15,4 +15,13 @@ public class RqTest {
         assertThat(actionName).isEqualTo("삭제");
 
     }
+
+    @Test
+    @DisplayName("getActionName(\"수정?id=1\") : 수정")
+    void t2(){
+        Rq rq = new Rq("수정?id=1");
+        String actionName = rq.getActionName();
+
+        assertThat(actionName).isEqualTo("수정");
+    }
 }
