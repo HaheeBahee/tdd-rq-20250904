@@ -59,3 +59,4 @@ public class RqTest {
         assertThat(paramValue).isEqualTo("서울");
     }
 }
+
