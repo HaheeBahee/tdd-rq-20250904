@@ -30,7 +30,7 @@ public class RqTest {
     void t3(){
         Rq rq = new Rq("등록?이름=홍길동");
 
-        String paramValue = rq.getParam("이름");//홍길동
+        String paramValue = rq.getParam("이름","");//홍길동
 
         assertThat(paramValue).isEqualTo("홍길동");
     }
@@ -39,7 +39,7 @@ public class RqTest {
     @DisplayName("입력값 : \"등록?고향=서울\" : getParam(\"고향\") : 서울")
     void t4(){
         Rq rq = new Rq("등록?고향=서울");
-        String paramValue = rq.getParam("고향");
+        String paramValue = rq.getParam("고향","");
         assertThat(paramValue).isEqualTo("서울");
     }
 
