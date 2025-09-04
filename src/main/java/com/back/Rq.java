@@ -34,4 +34,13 @@ public class Rq {
         }
         return defaultValue;
     }
+
+    public int getParamAsInt(String key, int defaultValue) {
+        String value = getParam(key, "");
+
+        if(value.isBlank()){
+            return defaultValue;
+        }
+        return Integer.parseInt(value);
+    }
 }

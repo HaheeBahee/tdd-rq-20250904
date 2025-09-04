@@ -85,7 +85,7 @@ public class RqTest {
 
 
     @Test
-    @DisplayName("입력값 : \"등록?page=1\" : getParam(\"page\") : 1")
+    @DisplayName("입력값 : \"등록?page=1\" : getParamAsInt(\"page\") : 1")
     void t10(){
         Rq rq = new Rq("등록?page=1");
         int paramValue = rq.getParamAsInt("page", -1);//1
