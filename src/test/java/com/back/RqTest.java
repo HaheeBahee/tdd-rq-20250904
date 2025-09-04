@@ -24,4 +24,15 @@ public class RqTest {
 
         assertThat(actionName).isEqualTo("수정");
     }
+
+    @Test
+    @DisplayName("입력값 : \"등록?이름=홍길동\" : getParam(\"이름\"): 홍길동")
+    void t3(){
+        Rq rq = new Rq("등록?이름=홍길동");
+
+        String paramValue = rq.getParam("이름");//홍길동
+
+        assertThat(paramValue).isEqualTo("홍길동");
+    }
+
 }
