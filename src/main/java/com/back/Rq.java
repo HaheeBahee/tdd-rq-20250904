@@ -17,11 +17,14 @@ public class Rq {
 
     }
 
-    public String getParam(String key) {
-        if(cmd.equals("등록?이름=홍길동"))return "홍길동";
-        if(cmd.equals("등록?고향=서울"))return "서울";
+    public String getParam(String inputKey) {
 
-        return "";
+        String[] cmdBits = cmd.split("\\?");
+        String queryString = cmdBits[1]; //이름=홍길동
 
+        String[] paramBits = queryString.split("=");
+        String value = paramBits[1];
+
+        return value;
     }
 }
