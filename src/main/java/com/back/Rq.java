@@ -17,14 +17,19 @@ public class Rq {
 
     }
 
-    public String getParam(String inputKey) {
+    public String getParam(String inputKey, String defaultValue) {
 
         String[] cmdBits = cmd.split("\\?");
         String queryString = cmdBits[1]; //이름=홍길동
 
         String[] paramBits = queryString.split("=");
+        String key = paramBits[0];
         String value = paramBits[1];
 
-        return value;
+        if(inputKey.equals(key)){
+            return value;
+        }
+
+        return defaultValue;
     }
 }
