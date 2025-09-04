@@ -51,5 +51,11 @@ public class RqTest {
         assertThat(paramValue).isEqualTo("");
     }
 
-
+    @Test
+    @DisplayName("입력값 : \"등록?고향=서울&이름=홍길동\" : getParam(\"고향\") : 서울")
+    void t6(){
+        Rq rq = new Rq("등록?고향=서울&이름=홍길동");
+        String paramValue = rq.getParam("고향", "");//서울
+        assertThat(paramValue).isEqualTo("서울");
+    }
 }
