@@ -60,11 +60,21 @@ public class RqTest {
     }
 
     @Test
-    @DisplayName("입력값 : \"등록?고향=서울&이름=홍길동\" : getParam(\"이름\") : 홍길동/")
+    @DisplayName("입력값 : \"등록?고향=서울&이름=홍길동\" : getParam(\"이름\") : 홍길동")
     void t7(){
         Rq rq = new Rq("등록?고향=서울&이름=홍길동");
         String paramValue = rq.getParam("이름", "");//홍길동
         assertThat(paramValue).isEqualTo("홍길동");
     }
+
+    @Test
+    @DisplayName("입력값 : \"등록?고향=서울&이름=홍길동&성별=남자\" : getParam(\"이름\") : 홍길동")
+    void t8(){
+        Rq rq = new Rq("등록?고향=서울&이름=홍길동&성별=남자");
+        String paramValue = rq.getParam("이름", "");//홍길동
+        assertThat(paramValue).isEqualTo("홍길동");
+    }
+
+
 }
 
